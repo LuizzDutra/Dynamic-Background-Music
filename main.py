@@ -35,7 +35,6 @@ def change_music(music: mixer.music):
         start_offset = secondary_point
     elif music_intensity <= 0.5 and start_offset+music.get_pos()/1000 > secondary_point:
         mixer.music.fadeout(2000)
-        print("here")
         sleep(2)
         music.stop()
         music.play(-1, primary_point, 2000)
@@ -78,6 +77,8 @@ def main():
             last_decrease = time()
 
         change_music(mixer.music)
+
+        sleep(0.5)
 
 
 
