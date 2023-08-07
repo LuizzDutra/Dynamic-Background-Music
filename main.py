@@ -28,16 +28,16 @@ def change_music(music: mixer.music):
     secondary_point = 75
 
     if music_intensity > 0.5 and start_offset+music.get_pos()/1000 < secondary_point:
-        mixer.music.fadeout(2000)
-        sleep(2)
+        mixer.music.fadeout(1000)
+        sleep(1)
         music.stop()
-        mixer.music.play(-1, secondary_point, 2000)
+        mixer.music.play(-1, secondary_point, 1000)
         start_offset = secondary_point
     elif music_intensity <= 0.5 and start_offset+music.get_pos()/1000 > secondary_point:
-        mixer.music.fadeout(2000)
-        sleep(2)
+        mixer.music.fadeout(1000)
+        sleep(1)
         music.stop()
-        music.play(-1, primary_point, 2000)
+        music.play(-1, primary_point, 1000)
         start_offset = primary_point
 
 def music_debug():
