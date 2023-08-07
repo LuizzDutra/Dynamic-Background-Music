@@ -24,8 +24,8 @@ def change_music(music: mixer.music):
     global music_intensity
     global start_offset
 
-    primary_point = 0
-    secondary_point = 68.5
+    primary_point = 2
+    secondary_point = 75
 
     if music_intensity > 0.5 and start_offset+music.get_pos()/1000 < secondary_point:
         mixer.music.fadeout(2000)
@@ -50,7 +50,7 @@ def main():
     mixer.init(size= 32)
     mixer.music.load("OperaMusic.mp3")
     mixer.music.rewind()
-    mixer.music.set_volume(0.075)
+    mixer.music.set_volume(1)
     mixer.music.play(-1)
 
     last_decrease = 0
@@ -78,7 +78,7 @@ def main():
 
         change_music(mixer.music)
 
-        sleep(0.5)
+        sleep(0.05)
 
 
 
